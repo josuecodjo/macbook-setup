@@ -1,0 +1,19 @@
+# ~/.gitconfig.local — machine-specific, NOT in git.
+
+[user]
+	name = __NAME__
+	email = __EMAIL__
+	# Paste the public key from 1Password (SSH key item → "public key"):
+	# signingkey = ssh-ed25519 AAAA...
+
+# Uncomment to sign every commit with your 1Password SSH key:
+# [gpg]
+# 	format = ssh
+# [gpg "ssh"]
+# 	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+# [commit]
+# 	gpgsign = true
+
+# Separate identity for client work: everything under ~/work/ uses ~/.gitconfig.work
+# [includeIf "gitdir:~/work/"]
+# 	path = ~/.gitconfig.work

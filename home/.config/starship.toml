@@ -1,0 +1,19 @@
+# Prompt: minimal, but always show which cluster you're pointed at.
+add_newline = false
+
+[kubernetes]
+disabled = false
+format = '[⎈ $context( \($namespace\))]($style) '
+style = "cyan"
+
+# Anything that looks like prod turns red. Adjust patterns to your context names.
+# Keep in sync with K8S_PROD_PATTERN in ~/.zshrc (used by the kd*/kdn guards).
+[[kubernetes.contexts]]
+context_pattern = ".*(prod|prd).*"
+style = "bold red"
+
+[java]
+format = '[☕ $version]($style) '
+
+[cmd_duration]
+min_time = 3000

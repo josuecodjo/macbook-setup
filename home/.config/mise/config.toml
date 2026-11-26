@@ -1,0 +1,20 @@
+# Global runtimes and tools. Projects override with their own mise.toml.
+# First Java entry is the default; switch per project with `mise use java@temurin-17`.
+
+[tools]
+java = ["temurin-21", "temurin-17", "temurin-25"]
+node = "lts"
+python = "3.13"
+
+# IaC: global default = latest; client repos pin with .terraform-version or mise.toml
+terraform = "latest"
+terragrunt = "latest"
+
+# Coding agents (run inside Orca worktrees)
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:@openai/codex" = "latest"
+"npm:opencode-ai" = "latest"
+
+[settings]
+# Read .terraform-version / .nvmrc / .python-version that client repos already have
+idiomatic_version_file_enable_tools = ["terraform", "node", "python"]
